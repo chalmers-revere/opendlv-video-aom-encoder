@@ -164,7 +164,7 @@ int32_t main(int32_t argc, char **argv) {
 
                     if (0 < totalSize) {
                         opendlv::proxy::ImageReading ir;
-                        ir.format("AV01").width(WIDTH).height(HEIGHT).data(std::string(&aomBuffer[0], totalSize));
+                        ir.fourcc("AV01").width(WIDTH).height(HEIGHT).data(std::string(&aomBuffer[0], totalSize));
                         od4.send(ir, sampleTimeStamp, ID);
 
                         if (VERBOSE) {
